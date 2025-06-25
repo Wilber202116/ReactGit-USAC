@@ -41,7 +41,9 @@ function Register(){
                             </div>
                             <input onChange={hadleImageChange} type="file" className="hidden" id="profilePicture" accept="image/*"/>
                             {
-                                (selectedImage != defaultImage) ? (<p className="text-sm font-bold">Foto de perfil</p>) : (<p className="text-sm font-bold text-red-800">Selecciona una imagen</p>)
+                                (selectedImage != defaultImage) ? 
+                                (<p className="text-sm font-bold text-blue-700">Foto de perfil</p>) : 
+                                (<p className="text-sm font-bold text-red-800">Selecciona una imagen</p>)
                             }
                         </div>
                     </form>
