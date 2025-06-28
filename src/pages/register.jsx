@@ -100,39 +100,6 @@ function Register(){
                             titleLink={"Iniciar Sesion"}
                             paramRoot={'/'}
                         />
-
-                        {/* se cambio por el AuthForm
-                        
-                        <AuthSelectImage handleImageClick={handleImageClick} selectedImage={selectedImage} hadleImageChange={hadleImageChange} defaultImage={defaultImage} />
-                
-                        <AuthInput label={"Nombre" } 
-                        paramtype={"text"} 
-                        paramId={"name"} 
-                        paramPlaceholder={"Ingresa tu nombre"} 
-                        paramOnChange={e => setName(e.target.value)}
-                        paramValue={name}/>
-
-                        <AuthInput 
-                        label={"Correo Electronico"} 
-                        paramtype={"email"} paramId={"email"} 
-                        paramPlaceholder={"Example@gmail.com"} 
-                        paramOnChange={e => setEmail(e.target.value)}
-                        paramValue={email}
-                        />
-                        <AuthInput label={"Constraseña" } 
-                        paramtype={"password"} 
-                        paramId={"password"} 
-                        paramPlaceholder={"********"} 
-                        paramOnChange={e => setPass(e.target.value)}
-                        paramValue={pass}
-                        /> 
-
-                        <AuthButton 
-                        paramAction={register}
-                        titleButton={'Registrarse'}
-                        titleLink={"Iniciar Sesion"}
-                        paramRoot={"/"}
-                        />*/}
                     </form>
                 </div>
             </div>
