@@ -1,8 +1,22 @@
 import { useState } from "react";
+import AuthInput from "../components/auth/AuthInput";
+import AuthImage from "../components/auth/AuthImage";
+import AuthSelectImage from "../components/auth/AuthSelectImage";
+import AuthForm from "../components/auth/AuthForm";
 
 function Register(){
+
+    const registerImage = "https://i.pinimg.com/736x/20/5e/c6/205ec6d22ee47d3cce846eb397972b6f.jpg"
     const defaultImage = 'https://i.pinimg.com/736x/e5/87/87/e58787fdb75a5bc6db321f32a6a78d3d.jpg'
     const [selectedImage, setSelectedImage] = useState(defaultImage);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [pass, setPass] = useState("");
+
+    const register = (e) => {
+        e.preventDefault()
+        console.log(name, email, pass);
+    }
 
     const handleImageClick = () =>{
         document.getElementById('profilePicture').click();
@@ -24,28 +38,101 @@ function Register(){
         };
     };
 
+    const fields = [
+        {
+            component: AuthSelectImage,
+            props: {
+                handleImageClick: handleImageClick,
+                selectedImage: selectedImage,
+                hadleImageChange: hadleImageChange,
+                defaultImage: defaultImage
+            },
+        },
+        {
+            component: AuthInput,
+            props: {
+                label: "Nombre",
+                paramtype: "text",
+                paramId: "name",
+                paramPlaceholder: "Ingresa tu nombre",
+                paramOnChange: e => setName(e.target.value),
+                paramValue: name
+            },
+        },
+        {
+            component: AuthInput,
+            props: {
+                label: "Correo Electronico",
+                paramtype: "email",
+                paramId: "email",
+                paramPlaceholder: "Example@gmail.com",
+                paramOnChange: e => setEmail(e.target.value),
+                paramValue: email
+            },
+        },
+        {
+            component: AuthInput,
+            props: {
+                label: "Contraseña",
+                paramtype: "password",
+                paramId: "password",
+                paramPlaceholder: "********",
+                paramOnChange: e => setPass(e.target.value),
+                paramValue: pass
+            }
+        }
+    ]
+
     return(
         <>
             <div className="flex justify-center items-center h-screen drop-shadow-x1 mt-1">
-                <div className="hidden md:block ml-4 h-1/2 drop-shadow-xl">
-                    <img src="https://i.pinimg.com/736x/20/5e/c6/205ec6d22ee47d3cce846eb397972b6f.jpg" alt="Si funciona?" className="h-full object-cover rounded-md" />
-                </div>
+
+                <AuthImage imageLink={registerImage} paramAlt={"pistogato"} />
 
                 <div className="bg-gray-100 p-6 m-6 rounded-md">
                     <h2 className="text-3xl font-semibold mt-10">Social Network</h2>
                     <h4 className="text-2xl font-semibold text-gray-500 mb-7">Crear Cuenta</h4>
                     <form className="mb-2">
-                        <div onClick={handleImageClick} className="flex flex-col items-center justify-center">
-                            <div className="w-32 h-32 rounded-full overflow-hidden">
-                                <img className="object-cover w-full h-full" src={selectedImage} alt="Perfil" />
-                            </div>
-                            <input onChange={hadleImageChange} type="file" className="hidden" id="profilePicture" accept="image/*"/>
-                            {
-                                (selectedImage != defaultImage) ? 
-                                (<p className="text-sm font-bold text-blue-700">Foto de perfil</p>) : 
-                                (<p className="text-sm font-bold text-red-800">Selecciona una imagen</p>)
-                            }
-                        </div>
+                        
+                        <AuthForm fields={fields}
+                            paramAction={register}
+                            titleButton={"Registrarse"}
+                            titleLink={"Iniciar Sesion"}
+                            paramRoot={'/'}
+                        />
+
+                        {/* se cambio por el AuthForm
+                        
+                        <AuthSelectImage handleImageClick={handleImageClick} selectedImage={selectedImage} hadleImageChange={hadleImageChange} defaultImage={defaultImage} />
+                
+                        <AuthInput label={"Nombre" } 
+                        paramtype={"text"} 
+                        paramId={"name"} 
+                        paramPlaceholder={"Ingresa tu nombre"} 
+                        paramOnChange={e => setName(e.target.value)}
+                        paramValue={name}/>
+
+                        <AuthInput 
+                        label={"Correo Electronico"} 
+                        paramtype={"email"} paramId={"email"} 
+                        paramPlaceholder={"Example@gmail.com"} 
+                        paramOnChange={e => setEmail(e.target.value)}
+                        paramValue={email}
+                        />
+                        <AuthInput label={"Constraseña" } 
+                        paramtype={"password"} 
+                        paramId={"password"} 
+                        paramPlaceholder={"********"} 
+                        paramOnChange={e => setPass(e.target.value)}
+                        paramValue={pass}
+                        /> 
+
+                        <AuthButton 
+                        paramAction={register}
+                        titleButton={'Registrarse'}
+                        titleLink={"Iniciar Sesion"}
+                        paramRoot={"/"}
+                        />*/}
                     </form>
                 </div>
             </div>

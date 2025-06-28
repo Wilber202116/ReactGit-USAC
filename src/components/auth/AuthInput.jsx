@@ -1,5 +1,5 @@
 
-function LoginInput( {label , paramtype, paramId, paramOnChange, paramPlaceholder, paramValue} ){
+function AuthInput( {label , paramtype, paramId, paramOnChange, paramPlaceholder, paramValue} ){
     return(
         <div className="mb-2">
             <label htmlFor={paramId} className="font-medium mb-2 text-sm">
@@ -17,4 +17,4 @@ function LoginInput( {label , paramtype, paramId, paramOnChange, paramPlaceholde
     );
 };
 
-export default LoginInput;
+export default AuthInput;
