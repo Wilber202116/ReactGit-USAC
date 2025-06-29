@@ -3,6 +3,7 @@ import AuthInput from "../components/auth/AuthInput";
 import AuthImage from "../components/auth/AuthImage";
 import AuthSelectImage from "../components/auth/AuthSelectImage";
 import AuthForm from "../components/auth/AuthForm";
+import AuthButton from "../components/auth/AuthButton";
 
 function Register(){
 
@@ -80,6 +81,15 @@ function Register(){
                 paramOnChange: e => setPass(e.target.value),
                 paramValue: pass
             }
+        },
+        {
+            component: AuthButton,
+            props: {
+                paramAction: register,
+                titleButton: "Registrarse",
+                titleLink: "Iniciar Sesion",
+                paramRoot: '/'
+            }
         }
     ]
 
@@ -93,13 +103,7 @@ function Register(){
                     <h2 className="text-3xl font-semibold mt-10">Social Network</h2>
                     <h4 className="text-2xl font-semibold text-gray-500 mb-7">Crear Cuenta</h4>
                     <form className="mb-2">
-                        
-                        <AuthForm fields={fields}
-                            paramAction={register}
-                            titleButton={"Registrarse"}
-                            titleLink={"Iniciar Sesion"}
-                            paramRoot={'/'}
-                        />
+                        <AuthForm fields={fields}/>
                     </form>
                 </div>
             </div>

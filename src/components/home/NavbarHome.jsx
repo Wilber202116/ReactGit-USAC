@@ -3,7 +3,7 @@ import { BsPlusSquare, BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 
-function NavbarHome(){
+function NavbarHome({ logout }){
     return (
         <div className="fixed h-screen border-r">
             <div className="hidden md:flex flex-col gap-y-z h-full w-[250px] p-2">
@@ -35,7 +35,7 @@ function NavbarHome(){
                             <p className="ml-5">Crear</p>
                         </div>
                     </Link>
-                    <Link to={'/logout'}>
+                    <Link onClick={logout}>
                         <div className="flex items-center mt-1 hover:bg-zinc-200 rounded-lg pl-5 py-2">
                             <AiFillCloseCircle className="font-bold text-2xl"></AiFillCloseCircle>
                             <p className="ml-5">Cerrar Sesion</p>

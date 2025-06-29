@@ -4,7 +4,7 @@ import AuthButton from "./AuthButton";
 
 // email, setEmail, pass, setPass, login esto se reemplazo por Fields
 
-function AuthForm({ fields, paramAction, titleButton, titleLink, paramRoot }){
+function AuthForm({ fields }){
     return(
         <div className="bg-gray p-9 m-6 rounded-md ml-4 shadow-lg shadow-[#ace6ec]">
             <center><h2 className="text-3x1 font-semibold mt-5">Social Network</h2></center>
@@ -22,28 +22,6 @@ function AuthForm({ fields, paramAction, titleButton, titleLink, paramRoot }){
                         return <Component key={index} {...field.props} />
                     })
                 }
-                {/*Se cambio esto por el fields para sacar mas rapido estos
-                componentes
-                <AuthInput 
-                label={"Correo Electronico"} 
-                paramtype={"email"} paramId={"email"} 
-                paramPlaceholder={"Example@gmail.com"} 
-                paramOnChange={e => setEmail(e.target.value)}
-                paramValue={email}
-                />
-                <AuthInput label={"Constraseña" } 
-                paramtype={"password"} 
-                paramId={"password"} 
-                paramPlaceholder={"********"} 
-                paramOnChange={e => setPass(e.target.value)}
-                paramValue={pass}
-                /> */}
-                <AuthButton 
-                paramAction={paramAction}
-                titleButton={titleButton}
-                titleLink={titleLink}
-                paramRoot={paramRoot}
-                />
             </form>
         </div>
     )
