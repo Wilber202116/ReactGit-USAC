@@ -15,7 +15,6 @@ function Logina() {
 
     const handleLogin = (e) =>{
         e.preventDefault()
-        console.log(email, pass);
         login(email,pass);
     }
 

@@ -102,9 +102,9 @@ function Register(){
                 <div className="bg-gray-100 p-6 m-6 rounded-md">
                     <h2 className="text-3xl font-semibold mt-10">Social Network</h2>
                     <h4 className="text-2xl font-semibold text-gray-500 mb-7">Crear Cuenta</h4>
-                    <form className="mb-2">
+                    <div className="mb-2">
                         <AuthForm fields={fields}/>
-                    </form>
+                    </div>
                 </div>
             </div>
         </>
