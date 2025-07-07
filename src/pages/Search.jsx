@@ -1,4 +1,4 @@
-import ContainerMe from "../components/home/container";
+import ContainerMe from "../components/home/Container";
 import NavbarHome from "../components/home/NavbarHome";
 import { useAuth } from "../context/AuthContext";
 
