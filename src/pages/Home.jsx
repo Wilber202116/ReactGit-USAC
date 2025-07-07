@@ -1,6 +1,6 @@
 import NavbarHome from "../components/home/NavbarHome";
 import { useAuth } from "../context/AuthContext";
-import ContainerMe from "../components/home/container";
+import ContainerMe from "../components/home/Container";
 
 function Home(){
     const {user, logout} = useAuth();
