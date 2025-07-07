@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../routes/routes";
 
 const AuthContext = createContext();
 
@@ -20,7 +21,7 @@ export function AuthProvider( { children } ){
                 const storedUser = localStorage.getItem("user");
                 if(storedUser){
                     setUser(JSON.parse(storedUser));
-                    navigate('home');
+                    navigate(ROUTES.HOME);
                 }
 
             }catch(error){
@@ -49,7 +50,7 @@ export function AuthProvider( { children } ){
             setUser(loggedUser);
             localStorage.setItem("user", JSON.stringify(loggedUser));
             // window.location.href = '/home'
-            navigate('home')
+            navigate(ROUTES.HOME)
         }else{
             console.log("Error al ingresar el usuario")
             alert("Email de usuario o contraseña incorrectos")
@@ -59,7 +60,7 @@ export function AuthProvider( { children } ){
     const logout = () => {
         setUser(null);
         localStorage.removeItem("user");
-        navigate('/');
+        navigate(ROUTES.LOGIN);
     }
 
     return(
