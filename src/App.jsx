@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Register from './pages/register';
 import Home from './pages/Home';
 import PrivateRoute from './routes/PrivateRoutes';
-import Applayout from './layouts/appLayout';
+import Applayout from './layouts/AppLayout';
 import Search from './pages/Search';
 import Messages from './pages/Messages';
 import Create from './pages/Create';
