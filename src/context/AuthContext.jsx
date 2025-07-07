@@ -20,7 +20,7 @@ export function AuthProvider( { children } ){
                 const storedUser = localStorage.getItem("user");
                 if(storedUser){
                     setUser(JSON.parse(storedUser));
-                    navigate("home");
+                    navigate('home');
                 }
 
             }catch(error){
@@ -49,7 +49,7 @@ export function AuthProvider( { children } ){
             setUser(loggedUser);
             localStorage.setItem("user", JSON.stringify(loggedUser));
             // window.location.href = '/home'
-            navigate("home")
+            navigate('home')
         }else{
             console.log("Error al ingresar el usuario")
             alert("Email de usuario o contraseña incorrectos")
